@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-playfair);
+
+  /* Paleta "gold" — não existe no Tailwind por defeito, definimos aqui */
+  --color-gold-50: #fdf9ed;
+  --color-gold-100: #faf0d2;
+  --color-gold-200: #f4dfa2;
+  --color-gold-300: #edc968;
+  --color-gold-400: #e6b13d;
+  --color-gold-500: #d79a24;
+  --color-gold-600: #b87b1a;
+  --color-gold-700: #945c19;
+  --color-gold-800: #7a4a1c;
+  --color-gold-900: #673e1d;
+  --color-gold-950: #3a1f0d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-sky-950 antialiased;
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  }
+  ::selection {
+    @apply bg-gold-200 text-sky-950;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
